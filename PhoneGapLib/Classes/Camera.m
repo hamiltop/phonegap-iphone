@@ -88,6 +88,13 @@
              presentModalViewController:self.pickerController animated:YES]; 
         }
     }
+	NSString* overlayFileNameString = [options valueForKey:@"overlayFileName"];
+	if (overlayFileNameString != nil)
+	{
+		UIImageView *overlayView= [[[UIImageView alloc] initWithImage:[UIImage
+			imageNamed:@"overlay.png"]] autorelease];
+		[pickerController.cameraOverlayView addSubview:overlayView];
+	}
 }
 
 
